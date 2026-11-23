@@ -498,4 +498,4 @@ PyPI uses Trusted Publishing from this repository’s `release.yml` workflow and
 
 ## License
 
-XFlog is licensed under [Apache 2.0](LICENSE). Bundled IBM Plex fonts keep their [SIL Open Font License](src/xflog/assets/FONT-LICENSE.txt).
+XFlog is maintained by [Aakash Howlader](https://github.com/aakashH242) and licensed under [Apache 2.0](LICENSE). See [NOTICE](NOTICE) for attribution. Bundled IBM Plex fonts keep their [SIL Open Font License](src/xflog/assets/FONT-LICENSE.txt).
