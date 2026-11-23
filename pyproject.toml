@@ -17,10 +17,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/aatbit/xflog"
-Repository = "https://github.com/aatbit/xflog"
-Issues = "https://github.com/aatbit/xflog/issues"
-Changelog = "https://github.com/aatbit/xflog/releases"
+Homepage = "https://github.com/aakashH242/xflog"
+Repository = "https://github.com/aakashH242/xflog"
+Issues = "https://github.com/aakashH242/xflog/issues"
+Changelog = "https://github.com/aakashH242/xflog/releases"
 
 [project.optional-dependencies]
 ui = ["fastapi>=0.115,<1", "gradio>=6,<7", "uvicorn>=0.34,<1"]

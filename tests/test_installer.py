@@ -35,7 +35,7 @@ def installer_environment(tmp_path):
 if [[ $1 == init ]]; then mkdir -p "${@: -1}";
 elif [[ $1 == -C && $3 == checkout ]]; then cp -R "$FIXTURE_SOURCE/." "$2/"; fi
 if [[ $1 == -C && $3 == rev-parse ]]; then printf '%s\\n' "$2"; fi
-if [[ $1 == -C && $3 == remote && $4 == get-url ]]; then echo https://github.com/aatbit/xflog.git; fi
+if [[ $1 == -C && $3 == remote && $4 == get-url ]]; then echo https://github.com/aakashH242/xflog.git; fi
 if [[ $1 == -C && $3 == diff && ${DIRTY_CHECKOUT:-} == yes ]]; then exit 1; fi
 if [[ $1 == -C && $3 == fetch && ${FETCH_FAIL:-} == yes ]]; then exit 9; fi
 """,
