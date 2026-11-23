@@ -1,7 +1,7 @@
 # Changelog
 
 Each tagged release has an automatically generated list of merged pull requests
-and contributors on the [GitHub releases page](https://github.com/aatbit/xflog/releases).
+and contributors on the [GitHub releases page](https://github.com/aakashH242/xflog/releases).
 
 ## 1.0.16 — 2026-11-13
 

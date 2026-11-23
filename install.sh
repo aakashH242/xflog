@@ -222,7 +222,7 @@ verify_checkout() {
   [[ $(git -C "$install_dir" rev-parse --show-toplevel) == "$install_dir" ]] || die 'Choose the root of the installed checkout.'
   local remote
   remote=$(git -C "$install_dir" remote get-url origin)
-  [[ $remote == https://github.com/aatbit/xflog.git || $remote == git@github.com:aatbit/xflog.git ]] || die 'The checkout must use the official aatbit/xflog origin.'
+  [[ $remote == https://github.com/aakashH242/xflog.git || $remote == git@github.com:aakashH242/xflog.git ]] || die 'The checkout must use the official aakashH242/xflog origin.'
 }
 
 load_installation() {
@@ -348,7 +348,7 @@ check_updates() (
   git init --quiet "$temporary"
   git -C "$temporary" fetch --quiet --depth 1 "$install_dir" HEAD || die 'Could not read the installed revision; nothing changed.'
   installed=$(git -C "$temporary" rev-parse 'FETCH_HEAD^{commit}')
-  git -C "$temporary" fetch --quiet --depth 1 https://github.com/aatbit/xflog.git "$reference" || die 'Could not check GitHub. Check your connection and source reference; nothing changed.'
+  git -C "$temporary" fetch --quiet --depth 1 https://github.com/aakashH242/xflog.git "$reference" || die 'Could not check GitHub. Check your connection and source reference; nothing changed.'
   latest=$(git -C "$temporary" rev-parse 'FETCH_HEAD^{commit}')
   latest_installer=$(git -C "$temporary" rev-parse "$latest:install.sh")
   git -C "$temporary" show "$latest:install.sh" > "$temporary/install.sh" || die 'The selected source has no installer; nothing changed.'
@@ -369,7 +369,7 @@ check_updates() (
     printf 'XFlog app: up to date.\n' >&3
   elif [[ $comparison == 1 ]]; then
     printf 'XFlog app: update available (files differ from the selected source).\nTo update, run:\n' >&3
-    printf 'curl -fsSL https://raw.githubusercontent.com/aatbit/xflog/%s/install.sh | XFLOG_REF=%q bash\nThen choose update and installation folder: %s\n' "$latest" "$reference" "$install_dir" >&3
+    printf 'curl -fsSL https://raw.githubusercontent.com/aakashH242/xflog/%s/install.sh | XFLOG_REF=%q bash\nThen choose update and installation folder: %s\n' "$latest" "$reference" "$install_dir" >&3
   else
     die 'Could not compare application files; no update applied.'
   fi
@@ -515,7 +515,7 @@ main() {
   done
   mkdir -p "$(dirname "$install_dir")"
   git init --quiet "$install_dir"
-  git -C "$install_dir" remote add origin https://github.com/aatbit/xflog.git
+  git -C "$install_dir" remote add origin https://github.com/aakashH242/xflog.git
   git -C "$install_dir" fetch --depth 1 origin "$reference"
   git -C "$install_dir" checkout --quiet --detach FETCH_HEAD
   [[ -f $install_dir/compose.yaml && -f $install_dir/uv.lock ]] || die 'The fetched source is not a complete XFlog checkout.'

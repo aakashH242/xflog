@@ -100,7 +100,7 @@ Each command makes one user lookup, which can cost credits. It prints the ID wit
 Run as your regular user, **without `sudo`**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aatbit/xflog/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aakashH242/xflog/main/install.sh | bash
 ```
 
 1. Choose **install**, then Docker or native Linux and a **new installation folder**.
@@ -118,7 +118,7 @@ The same installer can **check for updates**, **update** or **uninstall**. Histo
 Clone the repository and create your private settings file:
 
 ```bash
-git clone https://github.com/aatbit/xflog.git
+git clone https://github.com/aakashH242/xflog.git
 cd xflog
 cp .env.example .env
 chmod 600 .env
@@ -140,7 +140,7 @@ Open `http://127.0.0.1:7860`. Leave X credentials blank for the offline demo. Co
 Download, inspect, then run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aatbit/xflog/main/install.sh -o install-xflog.sh
+curl -fsSL https://raw.githubusercontent.com/aakashH242/xflog/main/install.sh -o install-xflog.sh
 less install-xflog.sh
 bash install-xflog.sh
 ```
@@ -151,6 +151,12 @@ bash install-xflog.sh
 <summary>Checking for updates, updating and uninstalling</summary>
 
 Run the installer again and enter your existing installation folder.
+
+If you installed XFlog before the GitHub transfer, run this inside your existing checkout once so the installer can find the new origin:
+
+```bash
+git remote set-url origin https://github.com/aakashH242/xflog.git
+```
 
 - **Check for updates** (`check`) reports app and installer changes separately without changing your installation. Docker need not be running. It can offer to run the updated installer first; a script saved elsewhere stays untouched. If an app update is available, it prints the update command.
 - **Update:** choose your install type and folder. Back up history first. Existing `.env` values, including blanks, and custom Docker network settings are kept; missing settings get defaults. Older installations are not prompted for new credentials during an update; add any missing renewal settings from the [setup checklist](#x-prerequisites) to `.env` and apply the changes. The installer asks before restarting and stops if you have edited the app’s source files.
@@ -411,7 +417,7 @@ For the browser app, install **`xflog[ui]`** instead, then run **`xflog`** (or `
 
 Use `python -m pip install --upgrade xflog` or `uv lock --upgrade-package xflog` followed by `uv sync`. Keep the `[ui]` extra in your pip command if you use the browser app. Stop XFlog and back up history before upgrading, then restart it with the same settings.
 
-For unreleased development code, use `python -m pip install "xflog @ git+https://github.com/aatbit/xflog.git@main"`. Prefer a released version for normal use.
+For unreleased development code, use `python -m pip install "xflog @ git+https://github.com/aakashH242/xflog.git@main"`. Prefer a released version for normal use.
 
 </details>
 
@@ -477,7 +483,7 @@ To run the full development suite from a checkout, use `uv sync --extra ui --ext
 
 ## Releases and contributing
 
-Pull requests to `main` and updates on `main` run lint, formatting and the mock-data tests on Python 3.12–3.14. No X credentials are needed. See the [changelog](CHANGELOG.md) and [release notes](https://github.com/aatbit/xflog/releases) for published changes.
+Pull requests to `main` and updates on `main` run lint, formatting and the mock-data tests on Python 3.12–3.14. No X credentials are needed. See the [changelog](CHANGELOG.md) and [release notes](https://github.com/aakashH242/xflog/releases) for published changes.
 
 <details>
 <summary>How maintainers publish a release</summary>

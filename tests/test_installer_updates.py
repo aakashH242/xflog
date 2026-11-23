@@ -42,7 +42,7 @@ def update_source(tmp_path):
     commit(remote)
     installed = tmp_path / "installed"
     git(tmp_path, "clone", "-q", "--no-hardlinks", str(remote), str(installed))
-    git(installed, "remote", "set-url", "origin", "https://github.com/aatbit/xflog.git")
+    git(installed, "remote", "set-url", "origin", "https://github.com/aakashH242/xflog.git")
     (installed / ".env").write_text("PRIVATE=fake-never-print-this\n")
     (installed / "history.sqlite3").write_text("keep history\n")
     temporary = tmp_path / "temporary"
@@ -53,7 +53,7 @@ def update_source(tmp_path):
     executable(
         transport,
         'arguments=(); for argument in "$@"; do\n'
-        " if [[ $argument == https://github.com/aatbit/xflog.git ]]; then argument=$TEST_REMOTE; fi\n"
+        " if [[ $argument == https://github.com/aakashH242/xflog.git ]]; then argument=$TEST_REMOTE; fi\n"
         ' arguments+=("$argument"); done\nexec "$REAL_GIT" "${arguments[@]}"\n',
     )
     environment = {
@@ -194,7 +194,7 @@ def test_check_uses_fixed_official_source_and_rejects_other_origin(update_source
     git(installed, "remote", "set-url", "origin", "https://example.invalid/fake.git")
     result = run_check(environment)
     assert result.returncode != 0
-    assert "official aatbit/xflog origin" in result.stderr
+    assert "official aakashH242/xflog origin" in result.stderr
     assert not list(Path(environment["TMPDIR"]).iterdir())
 
 
